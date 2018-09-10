@@ -25,4 +25,28 @@ t = np.arange(0.,5.,0.2)
 plt.plot(t, t, 'r--',t, t**2, 'bs', t, t**3, 'g^')
 plt.show()
 
+# 控制线条属性
+# 线条属性 <-- matplotlib.lines.Line2D --> linewidth dash style antialiased
+
+x = [0,1,2,3]
+y = [0,2,4,8]
+x1 = [0,1,2,3]
+x2 = [0,1,2,3]
+y1 = [0,1,2,3]
+y2 = [0,1,2,4]
+#  使用关键自参数设置线条属性
+plt.plot(x, y, linewidth=2.0)
+#  使用 Line2D 实例的 setter 方法
+line1, line2 = plt.plot(x1, y1, x2, y2)
+line, = plt.plot(x, y, '-')
+line.set_antialiased(False)
+#  使用 setp() 命令
+lines = plt.plot(x1, y1, x2, y2)
+#    使用 python 关键字参数
+plt.setp(lines, color='r', linewidth=2.0)
+#    使用 MATLAB 风格字符串/值对
+plt.setp(lines, 'color', 'r', 'linewidth', 2.0)
+plt.show()
+
+
 
