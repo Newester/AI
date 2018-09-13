@@ -64,3 +64,54 @@ print(l)
 it = iter(l)
 x = np.fromiter(it, dtype = float)
 print(x)
+
+# numpy.arange(start, stop, step, dtype)
+# start 范围的起始值
+# stop 范围的终止值
+# step 两个值的间隔，默认 1
+# dtype 返回 ndarray 的数据类型，如果没有提供，默认为输入数据的类型
+
+x = np.arange(5)
+print(x)
+
+x = np.arange(5, dtype = float)
+print(x)
+
+x = np.arange(10,20,2)
+print(x)
+
+
+# numpy.linspace(start, stop, num, endpoint, retstep, dtype)
+# start 序列的起始值
+# stop 序列的终止值，如果 endpoint 为 True ，则该值被包含在序列中
+# num 要生成的等间隔样例数量，默认为 50
+# endpoint 序列中是否包含 stop ，默认 True
+# retstep 如果为 True ，返回样例，以及连续数字之间的步长
+# dtype 输出 ndarray 的数据类型
+
+x = np.linspace(10,20,5)
+print(x)
+
+x = np.linspace(10,20,5,endpoint = False)
+print(x)
+
+x = np.linspace(1,2,5,retstep= True)
+print(x)
+
+# numpy.logspace(start, stop, num, endpoint, base, dtype)
+# start 起始值 （ base 的 start 次幂）
+# stop 终止值 （ base 的 stop 次幂）
+# num 范围内的数值数量，默认50
+# endpoint 如果为 True ，终止值包含在输出数组中
+# base 对数空间的底数，默认 10
+# dtype 输出数组的数据类型，如果没有提供，则取决于其他参数
+
+a = np.logspace(1.0, 2.0, num = 10)
+print(a)
+
+a = np.logspace(1, 10, num = 10, base = 2, dtype = int)
+print(a)
+
+
+
+
